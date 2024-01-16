@@ -36,6 +36,15 @@ const orderSchema = new mongoose.Schema({
         //         }
         //     }
         // ]
+    },
+    address:{
+        type: String,  // might be mini model that have pin code etc..
+        required: true,
+    },
+    status:{
+        type:String,
+        enum:["PENDING","CANCELLED","DELIVERED"],
+        default:"PENDING",
     }
 },{timestamps:true});
 
